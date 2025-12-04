@@ -62,10 +62,8 @@ Aplikasi ini dirancang untuk membantu pengguna menemukan lokasi menarik di Kota 
 │── forminputlocation.tsx   # Tambah lokasi baru
 │── formeditlocation.tsx    # Edit lokasi
 
----
-
 ## 📱 Tampilan Aplikasi
-
+```
 ![foto1](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto1.jpeg?raw=true)
 ![foto2](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto2.jpeg?raw=true)
 ![foto3](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto3.jpeg?raw=true)
