@@ -70,24 +70,24 @@ Berikut adalah tampilan antarmuka aplikasi **MAMPIR (Mangan lan Plesir)**:
 
 | Tampilan 1 | Tampilan 2 |
 |-----------|-----------|
-| <img src="assets/images/gambar1.jpeg" width="250"> | <img src="assets/images/gambar2.jpeg" width="250"> |
+| <img src="reactnative/assets/images/gambar1.jpeg" width="250"> | <img src="reactnative/assets/images/gambar2.jpeg" width="250"> |
 
 | Tampilan 3 | Tampilan 4 |
 |-----------|-----------|
-| <img src="assets/images/gambar3.jpeg" width="250"> | <img src="assets/images/gambar4.jpeg" width="250"> |
+| <img src="reactnative/assets/images/gambar3.jpeg" width="250"> | <img src="reactnative/assets/images/gambar4.jpeg" width="250"> |
 
 | Tampilan 5 | Tampilan 6 |
 |-----------|-----------|
-| <img src="assets/images/gambar5.jpeg" width="250"> | <img src="assets/images/gambar6.jpeg" width="250"> |
+| <img src="reactnative/assets/images/gambar5.jpeg" width="250"> | <img src="reactnative/assets/images/gambar6.jpeg" width="250"> |
 
 | Tampilan 7 | Tampilan 8 |
 |-----------|-----------|
-| <img src="assets/images/gambar7.jpeg" width="250"> | <img src="assets/images/gambar8.jpeg" width="250"> |
+| <img src="reactnative/assets/images/gambar7.jpeg" width="250"> | <img src="reactnative/assets/images/gambar8.jpeg" width="250"> |
 
 | Tampilan 9 | Tampilan 10 |
 |------------|-------------|
-| <img src="assets/images/gambar9.jpeg" width="250"> | <img src="assets/images/gambar10.jpeg" width="250"> |
+| <img src="reactnative/assets/images/gambar9.jpeg" width="250"> | <img src="reactnative/assets/images/gambar10.jpeg" width="250"> |
 
 | Tampilan 11 |
 |-------------|
-| <img src="assets/images/gambar11.jpeg" width="250"> |
+| <img src="reactnative/assets/images/gambar11.jpeg" width="250"> |
