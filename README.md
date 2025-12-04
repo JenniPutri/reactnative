@@ -64,4 +64,23 @@ Aplikasi ini dirancang untuk membantu pengguna menemukan lokasi menarik di Kota 
 
 ## 📱 Tampilan Aplikasi
 ```
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;"> <img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto1.jpeg?raw=true" width="100%"> <img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto2.jpeg?raw=true" width="100%"> <img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto3.jpeg?raw=true" width="100%"> <img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto4.jpeg?raw=true" width="100%"> <img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto5.jpeg?raw=true" width="100%"> <img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto6.jpeg?raw=true" width="100%"> <img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto7.jpeg?raw=true" width="100%"> <img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto8.jpeg?raw=true" width="100%"> <img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto9.jpeg?raw=true" width="100%"> <img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto10.jpeg?raw=true" width="100%"> <img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto11.jpeg?raw=true" width="100%"> </div>
+<table>
+  <tr>
+    <td><img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto1.jpeg?raw=true" width="150"></td>
+    <td><img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto2.jpeg?raw=true" width="150"></td>
+    <td><img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto3.jpeg?raw=true" width="150"></td>
+    <td><img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto4.jpeg?raw=true" width="150"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto5.jpeg?raw=true" width="150"></td>
+    <td><img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto6.jpeg?raw=true" width="150"></td>
+    <td><img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto7.jpeg?raw=true" width="150"></td>
+    <td><img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto8.jpeg?raw=true" width="150"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto9.jpeg?raw=true" width="150"></td>
+    <td><img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto10.jpeg?raw=true" width="150"></td>
+    <td><img src="https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto11.jpeg?raw=true" width="150"></td>
+  </tr>
+</table>
+
