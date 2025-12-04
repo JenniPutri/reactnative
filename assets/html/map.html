@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Wisata & Kuliner Solo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Custom Popup Styles - Minimalis */
+        .leaflet-popup-content-wrapper {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(226, 25, 152, 0.15);
+            padding: 0;
+            overflow: hidden;
+            min-width: 260px;
+            max-width: 280px;
+        }
+
+        .leaflet-popup-content {
+            margin: 0;
+            width: auto !important;
+        }
+
+        .leaflet-popup-tip {
+            background: white;
+        }
+
+        .popup-header {
+            background: linear-gradient(135deg, #e21998 0%, #fb92cf 100%);
+            padding: 12px 14px;
+            color: white;
+        }
+
+        .popup-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .popup-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .popup-body {
+            padding: 12px 14px;
+        }
+
+        .info-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            background: #FFF0F7;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+        }
+
+        .info-content {
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #666;
+            font-size: 11px;
+            margin-bottom: 2px;
+        }
+
+        .info-value {
+            color: #333;
+            font-size: 12px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #f0f0f0;
+            margin: 10px 0;
+        }
+
+        .jam-compact {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 8px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        .jam-day {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .jam-time {
+            color: #666;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+
+        .status-open {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        .status-closed {
+            background: #FFEBEE;
+            color: #C62828;
+        }
+
+        .coordinates-compact {
+            background: #FFF0F7;
+            padding: 6px 8px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: #e21998;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .pink-marker {
+            background-color: #e21998;
+            width: 32px;
+            height: 32px;
+            display: block;
+            position: relative;
+            border-radius: 50%;
+            /* <-- bulat sempurna */
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(226, 25, 152, 0.4);
+            transform: none;
+            /* pastikan tidak ada rotasi */
+        }
+
+        .pink-marker::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(226, 25, 152, 0.6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(226, 25, 152, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(226, 25, 152, 0);
+            }
+        }
+
+        .marker-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #FFE6F3;
+            border-top: 3px solid #e21998;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-text {
+            color: #e21998;
+            font-weight: 600;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Memuat peta...</div>
+    </div>
+    <div id="map"></div>
+
+    <!-- Load scripts in correct order -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+    <script>
+        // Wait for all scripts to load
+        window.addEventListener('load', function () {
+            // Hide loading overlay
+            document.getElementById('loading').style.display = 'none';
+
+            // Firebase Configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyAIDdnbV7oD7h2tHkr8emdsospyQPa9hEU",
+                authDomain: "reactnative-2025-9bf81.firebaseapp.com",
+                databaseURL: "https://reactnative-2025-9bf81-default-rtdb.firebaseio.com",
+                projectId: "reactnative-2025-9bf81",
+                storageBucket: "reactnative-2025-9bf81.firebasestorage.app",
+                messagingSenderId: "757796835284",
+                appId: "1:757796835284:web:7d6354ec7d8dc775da5041"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const database = firebase.database();
+
+            // Initialize map
+            const map = L.map('map').setView([-7.5707, 110.8281], 15);
+
+            // Add tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap',
+                maxZoom: 19
+            }).addTo(map);
+
+            // Custom Pink Icon
+            const pinkIcon = L.divIcon({
+                className: 'pink-marker marker-pulse',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
+            });
+
+            // DATA MANUAL: Informasi detail untuk setiap lokasi
+            const locationDetails = {
+                "Rumah Budaya Kratonan": {
+                    deskripsi: "Rumah Budaya Kratonan adalah sebuah tempat wisata edukasi yang menyajikan informasi sejarah dan budaya Kota Surakarta.",
+                    jamOperasional: {
+                        "Senin - Sabtu": "09:00 - 15:00",
+                        "Minggu": "11:00 - 13:00"
+                    },
+                    harga: "Rp 15.000 - Rp 25.000",
+                    fasilitas: "Parkir, Toilet, Museum, Guide",
+                    kategori: "Wisata"
+                },
+                "Tumurun Private Museum": {
+                    deskripsi: " Museum Tumurun menyajikan koleksi seni rupa yang berasal dari berbagai era mulai para maestro hingga seniman kontemporer yang ternama.",
+                    jamOperasional: {
+                        "Selasa - Minggu": "10:00 - 15:00",
+                    },
+                    harga: "Rp 25.000",
+                    fasilitas: "Parkir, Toilet, dan Mushola",
+                    kategori: "Wisata"
+                },
+                "Pasar Gede Solo": {
+                    deskripsi: "Pasar tradisional bersejarah dengan jajanan dan oleh-oleh khas Solo.",
+                    jamOperasional: {
+                        "Senin - Minggu": "06:00 - 18:00"
+                    },
+                    harga: "Gratis",
+                    fasilitas: "Parkir, Toilet, ATM",
+                    kategori: "Kuliner"
+                },
+                "Kampung Batik Laweyan": {
+                    deskripsi: "Kampoeng Batik Tertua di Indonesia Industri batik tulis warna alami di Laweyan fungsi sebagai showroom batik untuk menyambut para wisatawan.",
+                    jamOperasional: {
+                        "Senin - Minggu": "08:00 - 18:00"
+                    },
+                    harga: "Gratis",
+                    fasilitas: "Parkir, Penginapan, dan Kuliner",
+                    kategori: "Wisata"
+                },
+                "Pasar Triwindu": {
+                    deskripsi: "Pasar Triwindhu merupakan pasar barang-barang antik, tiruannya, serta onderdil khusus (klithikan) yang berada di Kota Surakarta.",
+                    jamOperasional: {
+                        "Senin - Minggu": "09:00 - 16:00"
+                    },
+                    harga: "Gratis",
+                    fasilitas: "Kantin, Toilet, Musala, Parkir, dan Gazebo",
+                    kategori: "Wisata"
+                },
+                "Pracima Tuin": {
+                    deskripsi: "Pracima Tuin adalah kompleks taman dan restoran di dalam Pura Mangkunegaran, Surakarta, yang dulunya merupakan taman pribadi Mangkunegara VII.",
+                    jamOperasional: {
+                        "Senin - Minggu": "10:00 - 21:00"
+                    },
+                    harga: "Rp 50.000 - Rp 150.000",
+                    fasilitas: "Parkir, Toilet, dan Taman",
+                    kategori: "Kuliner"
+                },
+                "Solo Safari": {
+                    deskripsi: "Solo Safari merupakan sebuah taman margasatwa yang terletak di Surakarta, Jawa Tengah.",
+                    jamOperasional: {
+                        "Senin - Minggu": "08:30 - 16:30"
+                    },
+                    harga: "Rp 45.000 - Rp 110.000",
+                    fasilitas: "Parkir, Toilet, dan Mushola",
+                    kategori: "Wisata"
+                },
+                "Wedangan Pendopo": {
+                    deskripsi: "Tempat ngopi outdoor yang nyaman dengan menu wedang uwuh.",
+                    jamOperasional: {
+                        "Senin - Minggu": "18:00 - 01:00"
+                    },
+                    harga: "Rp 5.000 - 20.000",
+                    fasilitas: "Parkir, WiFi, Live Music",
+                    kategori: "Kuliner"
+                }
+            };
+
+            // Function to get location details
+            function getLocationDetails(name) {
+                return locationDetails[name] || {
+                    deskripsi: "Lokasi menarik di Solo.",
+                    jamOperasional: {
+                        "Senin - Minggu": "08:00 - 17:00"
+                    },
+                    harga: "Hubungi lokasi",
+                    fasilitas: "Info belum tersedia",
+                    kategori: "Wisata"
+                };
+            }
+
+            // Function to check if open now
+            function isOpenNow(jamOperasional) {
+                const now = new Date();
+                const dayNames = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+                const currentDay = dayNames[now.getDay()];
+                const hour = now.getHours();
+                const minute = now.getMinutes();
+                const currentTime = hour * 60 + minute;
+
+                for (const [days, time] of Object.entries(jamOperasional)) {
+                    if (time === "Tutup") continue;
+
+                    if (days.includes(currentDay) || days === "Senin - Minggu" || days.includes("-")) {
+                        const [open, close] = time.split(' - ');
+                        const [openH, openM] = open.split(':').map(Number);
+                        const [closeH, closeM] = close.split(':').map(Number);
+
+                        const openTime = openH * 60 + openM;
+                        const closeTime = closeH * 60 + closeM;
+
+                        if (currentTime >= openTime && currentTime <= closeTime) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+
+            // Function to create compact popup content
+            function createPopupContent(location) {
+                const details = getLocationDetails(location.name);
+                const categoryIcon = details.kategori === 'Kuliner' ? '🍴' : '🗺️';
+                const isOpen = isOpenNow(details.jamOperasional);
+                const statusClass = isOpen ? 'status-open' : 'status-closed';
+                const statusText = isOpen ? '● Buka' : '● Tutup';
+
+                // Get first schedule entry
+                const firstSchedule = Object.entries(details.jamOperasional)[0];
+                const scheduleDay = firstSchedule[0];
+                const scheduleTime = firstSchedule[1];
+
+                return `
+                    <div class="popup-header">
+                        <div class="popup-title">${location.name}</div>
+                        <span class="popup-category">${categoryIcon} ${details.kategori}</span>
+                    </div>
+                    <div class="popup-body">
+                        <div class="info-row">
+                            <div class="info-icon">ℹ️</div>
+                            <div class="info-content">
+                                <div class="info-value">${details.deskripsi}</div>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="info-row">
+                            <div class="info-icon">🕐</div>
+                            <div class="info-content">
+                                <div class="info-label">
+                                    Jam Operasional
+                                    <span class="status-badge ${statusClass}">${statusText}</span>
+                                </div>
+                                <div class="jam-compact">
+                                    <span class="jam-day">${scheduleDay}</span>
+                                    <span class="jam-time">${scheduleTime}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="info-row">
+                            <div class="info-icon">💰</div>
+                            <div class="info-content">
+                                <div class="info-label">Harga</div>
+                                <div class="info-value">${details.harga}</div>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="info-row">
+                            <div class="info-icon">🏢</div>
+                            <div class="info-content">
+                                <div class="info-label">Fasilitas</div>
+                                <div class="info-value">${details.fasilitas}</div>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="info-row">
+                            <div class="info-icon">📍</div>
+                            <div class="info-content">
+                                <div class="info-label">Koordinat</div>
+                                <div class="coordinates-compact">${location.coordinates}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Fetch data from Firebase
+            const pointsRef = database.ref('points/');
+            pointsRef.on('value', (snapshot) => {
+                const data = snapshot.val();
+
+                if (!data) {
+                    console.log('No data available');
+                    return;
+                }
+
+                const markers = [];
+
+                Object.keys(data).forEach(key => {
+                    const point = data[key];
+
+                    if (!point.coordinates || typeof point.coordinates !== 'string') {
+                        return;
+                    }
+
+                    const [latitude, longitude] = point.coordinates.split(',').map(coord => parseFloat(coord.trim()));
+
+                    if (isNaN(latitude) || isNaN(longitude)) {
+                        console.warn(`Invalid coordinates for ${point.name}`);
+                        return;
+                    }
+
+                    const location = {
+                        name: point.name,
+                        coordinates: point.coordinates
+                    };
+
+                    const marker = L.marker([latitude, longitude], { icon: pinkIcon })
+                        .addTo(map)
+                        .bindPopup(createPopupContent(location), {
+                            maxWidth: 280,
+                            minWidth: 260,
+                            className: 'custom-popup'
+                        });
+
+                    markers.push(marker);
+                });
+
+                // Fit bounds to show all markers
+                if (markers.length > 0) {
+                    const group = L.featureGroup(markers);
+                    map.fitBounds(group.getBounds().pad(0.1));
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
