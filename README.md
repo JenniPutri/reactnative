@@ -65,16 +65,7 @@ Aplikasi ini dirancang untuk membantu pengguna menemukan lokasi menarik di Kota 
 ---
 
 ## 📱 Tampilan Aplikasi
-Berikut adalah tampilan antarmuka aplikasi **MAMPIR (Mangan lan Plesir)**:
 
-![foto1](assets/images/foto1.jpeg)
-![foto2](assets/images/foto2.jpeg)
-![foto3](assets/images/foto3.jpeg)
-![foto4](assets/images/foto4.jpeg)
-![foto5](assets/images/foto5.jpeg)
-![foto6](assets/images/foto6.jpeg)
-![foto7](assets/images/foto7.jpeg)
-![foto8](assets/images/foto8.jpeg)
-![foto9](assets/images/foto9.jpeg)
-![foto10](assets/images/foto10.jpeg)
-![foto11](assets/images/foto11.jpeg)
+![foto1](https://raw.githubusercontent.com/JenniPutri/reactnative/master/assets/images/foto1.jpeg)
+![foto2](https://raw.githubusercontent.com/JenniPutri/reactnative/master/assets/images/foto2.jpeg)
+![foto3](https://raw.githubusercontent.com/JenniPutri/reactnative/master/assets/images/foto3.jpeg)
