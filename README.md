@@ -94,3 +94,7 @@ Sumber data yang digunakan dalam pengembangan aplikasi **MAMPIR** adalah sebagai
   </tr>
 </table>
 
+## 👩‍💻 Pengembang
+Aplikasi ini dikembangkan oleh **Jenni Putri Ardani-23/515612/SV/22586** dengan fokus pada:  
+- Pengembangan aplikasi mobile menggunakan **React Native & Expo**.  
+- Integrasi **Firebase** dan **Google Maps API** untuk data dan peta.  
