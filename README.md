@@ -61,3 +61,32 @@ Aplikasi ini dirancang untuk membantu pengguna menemukan lokasi menarik di Kota 
 │── review.tsx              # Halaman Review dan Rating
 │── forminputlocation.tsx   # Tambah lokasi baru
 │── formeditlocation.tsx    # Edit lokasi
+
+## ## 📱 Tampilan Aplikasi
+
+Berikut adalah tampilan antarmuka aplikasi **MAMPIR (Mangan lan Plesir)**:
+
+| Tampilan 1 | Tampilan 2 |
+|-----------|-----------|
+| <img src="assets/images/gambar 1.png" width="250"> | <img src="assets/images/gambar 2.png" width="250"> |
+
+| Tampilan 3 | Tampilan 4 |
+|-----------|-----------|
+| <img src="assets/images/gambar 3.png" width="250"> | <img src="assets/images/gambar 4.png" width="250"> |
+
+| Tampilan 5 | Tampilan 6 |
+|-----------|-----------|
+| <img src="assets/images/gambar 5.png" width="250"> | <img src="assets/images/gambar 6.png" width="250"> |
+
+| Tampilan 7 | Tampilan 8 |
+|-----------|-----------|
+| <img src="assets/images/gambar 7.png" width="250"> | <img src="assets/images/gambar 8.png" width="250"> |
+
+| Tampilan 9 | Tampilan 10 |
+|------------|-------------|
+| <img src="assets/images/gambar 9.png" width="250"> | <img src="assets/images/gambar 10.png" width="250"> |
+
+| Tampilan 11 |
+|-------------|
+| <img src="assets/images/gambar 11.png" width="250"> |
+
