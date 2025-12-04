@@ -65,29 +65,16 @@ Aplikasi ini dirancang untuk membantu pengguna menemukan lokasi menarik di Kota 
 ---
 
 ## 📱 Tampilan Aplikasi
-
 Berikut adalah tampilan antarmuka aplikasi **MAMPIR (Mangan lan Plesir)**:
 
-| Tampilan 1 | Tampilan 2 |
-|-----------|-----------|
-| <img src="assets/images/foto1.jpeg" width="150"> | <img src="assets/images/foto2.jpeg" width="150"> |
-
-| Tampilan 3 | Tampilan 4 |
-|-----------|-----------|
-| <img src="assets/images/foto3.jpeg" width="150"> | <img src="assets/images/foto4.jpeg" width="150"> |
-
-| Tampilan 5 | Tampilan 6 |
-|-----------|-----------|
-| <img src="assets/images/foto5.jpeg" width="150"> | <img src="assets/images/foto6.jpeg" width="150"> |
-
-| Tampilan 7 | Tampilan 8 |
-|-----------|-----------|
-| <img src="assets/images/foto7.jpeg" width="150"> | <img src="assets/images/foto8.jpeg" width="150"> |
-
-| Tampilan 9 | Tampilan 10 |
-|------------|------------|
-| <img src="assets/images/foto9.jpeg" width="150"> | <img src="assets/images/foto10.jpeg" width="150"> |
-
-| Tampilan 11 |
-|-------------|
-| <img src="assets/images/foto11.jpeg" width="150"> |
+![foto1](assets/images/foto1.jpeg)
+![foto2](assets/images/foto2.jpeg)
+![foto3](assets/images/foto3.jpeg)
+![foto4](assets/images/foto4.jpeg)
+![foto5](assets/images/foto5.jpeg)
+![foto6](assets/images/foto6.jpeg)
+![foto7](assets/images/foto7.jpeg)
+![foto8](assets/images/foto8.jpeg)
+![foto9](assets/images/foto9.jpeg)
+![foto10](assets/images/foto10.jpeg)
+![foto11](assets/images/foto11.jpeg)
