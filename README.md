@@ -62,6 +62,8 @@ Aplikasi ini dirancang untuk membantu pengguna menemukan lokasi menarik di Kota 
 │── forminputlocation.tsx   # Tambah lokasi baru
 │── formeditlocation.tsx    # Edit lokasi
 
+---
+
 ## 📱 Tampilan Aplikasi
 ```
 <table>
