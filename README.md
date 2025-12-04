@@ -69,8 +69,6 @@ Sumber data yang digunakan dalam pengembangan aplikasi **MAMPIR** adalah sebagai
    Menyimpan data lokasi, rating, dan review pengguna.
 2. **Google Maps API**  
    Menyediakan koordinat, peta interaktif, dan navigasi lokasi.
-3. **Survey Lapangan & Dokumentasi Pribadi**  
-   Referensi tambahan berupa informasi lokasi serta foto asli.
 
 
 ## 📱 Tampilan Aplikasi
