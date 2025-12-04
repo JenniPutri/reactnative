@@ -62,31 +62,30 @@ Aplikasi ini dirancang untuk membantu pengguna menemukan lokasi menarik di Kota 
 │── forminputlocation.tsx   # Tambah lokasi baru
 │── formeditlocation.tsx    # Edit lokasi
 
-## ## 📱 Tampilan Aplikasi
+## 📱 Tampilan Aplikasi
 
 Berikut adalah tampilan antarmuka aplikasi **MAMPIR (Mangan lan Plesir)**:
 
 | Tampilan 1 | Tampilan 2 |
 |-----------|-----------|
-| <img src="assets/images/gambar 1.png" width="250"> | <img src="assets/images/gambar 2.png" width="250"> |
+| <img src="assets/images/gambar1.jpg" width="250"> | <img src="assets/images/gambar2.jpg" width="250"> |
 
 | Tampilan 3 | Tampilan 4 |
 |-----------|-----------|
-| <img src="assets/images/gambar 3.png" width="250"> | <img src="assets/images/gambar 4.png" width="250"> |
+| <img src="assets/images/gambar3.jpg" width="250"> | <img src="assets/images/gambar4.jpg" width="250"> |
 
 | Tampilan 5 | Tampilan 6 |
 |-----------|-----------|
-| <img src="assets/images/gambar 5.png" width="250"> | <img src="assets/images/gambar 6.png" width="250"> |
+| <img src="assets/images/gambar5.jpg" width="250"> | <img src="assets/images/gambar6.jpg" width="250"> |
 
 | Tampilan 7 | Tampilan 8 |
 |-----------|-----------|
-| <img src="assets/images/gambar 7.png" width="250"> | <img src="assets/images/gambar 8.png" width="250"> |
+| <img src="assets/images/gambar7.jpg" width="250"> | <img src="assets/images/gambar8.jpg" width="250"> |
 
 | Tampilan 9 | Tampilan 10 |
 |------------|-------------|
-| <img src="assets/images/gambar 9.png" width="250"> | <img src="assets/images/gambar 10.png" width="250"> |
+| <img src="assets/images/gambar9.jpg" width="250"> | <img src="assets/images/gambar10.jpg" width="250"> |
 
 | Tampilan 11 |
 |-------------|
-| <img src="assets/images/gambar 11.png" width="250"> |
-
+| <img src="assets/images/gambar11.jpg" width="250"> |
