@@ -66,6 +66,14 @@ Aplikasi ini dirancang untuk membantu pengguna menemukan lokasi menarik di Kota 
 
 ## 📱 Tampilan Aplikasi
 
-![foto1](https://raw.githubusercontent.com/JenniPutri/reactnative/master/assets/images/foto1.jpeg)
-![foto2](https://raw.githubusercontent.com/JenniPutri/reactnative/master/assets/images/foto2.jpeg)
-![foto3](https://raw.githubusercontent.com/JenniPutri/reactnative/master/assets/images/foto3.jpeg)
+![foto1](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto1.jpeg?raw=true)
+![foto2](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto2.jpeg?raw=true)
+![foto3](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto3.jpeg?raw=true)
+![foto4](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto4.jpeg?raw=true)
+![foto5](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto5.jpeg?raw=true)
+![foto6](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto6.jpeg?raw=true)
+![foto7](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto7.jpeg?raw=true)
+![foto8](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto8.jpeg?raw=true)
+![foto9](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto9.jpeg?raw=true)
+![foto10](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto10.jpeg?raw=true)
+![foto11](https://github.com/JenniPutri/reactnative/blob/master/assets/images/foto11.jpeg?raw=true)
