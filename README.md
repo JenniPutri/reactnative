@@ -1,50 +1,63 @@
-# Welcome to your Expo app 👋
+<!-- =============================== -->
+<!-- 📌 PROJECT README - MAMPIR APP -->
+<!-- =============================== -->
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<h1 align="center">📍 <b>MAMPIR — Mangan lan Plesir</b></h1>
+<p align="center">Aplikasi mobile untuk eksplorasi wisata & kuliner Kota Surakarta</p>
 
-## Get started
+---
 
-1. Install dependencies
+<p align="center">
+  <img src="https://img.shields.io/badge/Build-React%20Native-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Database-Firebase-yellow?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Map-Google%20Maps-green?style=for-the-badge">
+</p>
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## 🔥 Tentang Aplikasi
 
-   ```bash
-   npx expo start
-   ```
+**MAMPIR (Mangan lan Plesir)** adalah aplikasi eksplorasi wisata & kuliner berbasis **React Native**.  
+Aplikasi ini dirancang untuk membantu pengguna menemukan lokasi menarik di Kota **Surakarta**, lengkap dengan:
 
-In the output, you'll find options to open the app in a
+✨ Rekomendasi tempat,  
+⭐ Rating & review pengguna,  
+🗺 Peta interaktif, serta  
+📍 Navigasi lokasi.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## ✨ Fitur Utama
 
-## Get a fresh project
+| Fitur | Deskripsi |
+|------|-----------|
+| 🔍 Pencarian Lokasi | Menampilkan destinasi wisata & kuliner terdekat |
+| ⭐ Rating & Review | Penilaian pengguna untuk tempat yang pernah dikunjungi |
+| 🗺 Web Map + Google Maps | Visualisasi titik lokasi dalam peta interaktif |
+| 🏆 Rekomendasi Pilihan Terbaik | Berdasarkan rating & popularitas |
+| 📜 Riwayat Kunjungan | Menyimpan lokasi yang pernah dibuka pengguna |
 
-When you're ready, run:
+---
+
+## 🛠 Tech Stack
+
+| Komponen | Teknologi |
+|--------|-----------|
+| Framework | **React Native (Expo)** |
+| Basis Data | **Firebase Realtime Database** |
+| Peta | **Google Maps API**, WebView HTML Map |
+| UI | ThemedView, FontAwesome, StyleSheet |
+
+---
+
+## 🗂 Struktur Folder Utama
 
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+📁 app
+│── index.tsx               # Home & Popular Recommendation
+│── gmap.tsx                # Google Map Integration
+│── mapwebview.tsx          # Alternative Web Map
+│── lokasi.tsx              # List Tempat Kuliner & Wisata
+│── review.tsx              # Halaman Review dan Rating
+│── forminputlocation.tsx   # Tambah lokasi baru
+│── formeditlocation.tsx    # Edit lokasi
